@@ -27,18 +27,20 @@
             tapping_term_ms = <200>;
             flavor = "tap-preferred";
         };
+/*
+ */ {
+ *  combos {
+ *         compatible = "zmk,combos";
+ *         combo_caps_word {
+ *            timeout-ms = <50>;
+ *            key-positions = <16, 19>;
+ *            bindings = <&caps_word>;
+ *         };
+ *  };
+ *
+ *};
+ */
 
-/ {
-  combos {
-         compatible = "zmk,combos";
-         combo_caps_word {
-            timeout-ms = <50>;
-            key-positions = <16, 19>;
-            bindings = <&caps_word>;
-         };
-  };
-
-};
 / {
     behaviors {
         hm: homerow_mods {
