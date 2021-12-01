@@ -28,8 +28,8 @@
     flavor = "tap-preferred";
 };
 &caps_word {
-    continue-list = <SE_MINS SE_UNDS SE_AMPR SE_AE SE_OE SE_AA>
-}
+    continue-list = <SE_MINS SE_UNDS SE_AMPR SE_AE SE_OE SE_AA>;
+};
 
 / {
     behaviors {
