@@ -59,10 +59,10 @@
 // | lock |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp TAB  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I    &kp O   &kp P    &kp SE_AA
-   &kp ESC &hm LGUI A &hm LALT S &hm LCTL D &hm LSFT F &kp G   &kp H &hm LSFT J  &hm LCTL K  &hm LALT L &hm LGUI SE_OE &kp SE_AE
-   &kp K_LOCK &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp CMMA &kp DOT &kp SE_QUES &kp DEL
-                   &kp LGUI &kp BKSP &lt LOWER SPC   &lt RAISE RET &mo DEL &mo ADJ
+   &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y &kp U       &kp I       &kp O      &kp P          &kp SE_AA
+   &kp ESC    &hm LGUI A &hm LALT S &hm LCTL D &hm LSFT F &kp G          &kp H &hm LSFT J  &hm LCTL K  &hm LALT L &hm LGUI SE_OE &kp SE_AE
+   &kp K_LOCK &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N &kp M       &kp CMMA    &kp DOT    &kp SE_QUES    &kp DEL
+                                    &kp LGUI   &kp BKSP   &lt LOWER SPC  &lt RAISE RET     &kp DEL     &mo ADJ
                         >;
                 };
                 lower_layer {
