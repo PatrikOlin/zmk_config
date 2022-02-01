@@ -72,10 +72,10 @@
 // |      | BT1 | BT2 | BT3 | BT4 | BT5 |   | HME |     |     | END |     |      |
 //                    |     |     | BTC |   |     |     |     |
                         bindings = <
-   &trans &kp EXCL  &kp SE_LBRC &kp SE_RBRC &kp SE_DQUO &kp PRCNT      &kp SE_AMPR &kp SE_PLUS &kp SE_LT &kp SE_GT &kp SE_ASTR &kp SE_PIPE
-   &kp LALT &kp SE_SLSH &kp SE_LPRN &kp SE_RPRN &kp SE_QUOT &kp SE_GRV         &kp SE_AT  &kp SE_MINS &kp SE_LCBR  &kp SE_RCBR &kp SE_CIRC &kp SE_ACUT
-   &kp LCTL &kp SE_BLSH &kp SE_ASTR &kp SE_DLR &kp SE_SCLN &kp SE_HASH      &kp SE_TILD &kp SE_UNDS &kp SE_SCLN &kp SE_CLN &kp SE_EQL &kp SE_TILD
-                                      &trans &trans &trans           &trans &trans &trans
+   &trans   &kp EXCL    &kp SE_LBRC &kp SE_RBRC &kp SE_DQUO &kp PRCNT      &kp SE_AMPR &kp SE_PLUS &kp SE_LT   &kp SE_GT   &kp SE_ASTR &kp SE_PIPE
+   &kp LALT &kp SE_SLSH &kp SE_LPRN &kp SE_RPRN &kp SE_QUOT &kp SE_GRV     &kp SE_AT   &kp SE_MINS &kp SE_LCBR &kp SE_RCBR &kp SE_CIRC &kp SE_ACUT
+   &kp LCTL &kp SE_BSLS &kp SE_ASTR &kp SE_DLR  &kp SE_SCLN &kp SE_HASH    &kp SE_TILD &kp SE_UNDS &kp SE_SCLN &kp SE_CLN  &kp SE_EQL  &kp SE_TILD
+                                    &trans      &trans      &trans         &trans      &trans      &trans
                         >;
                 };
 
