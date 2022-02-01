@@ -1,0 +1,108 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include "keys-swedish.h"
+
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
+#define ADJ     3
+
+
+&lt {
+    tapping_term_ms = <200>;
+    flavor = "tap-preferred";
+};
+&mt {
+    tapping_term_ms = <200>;
+    flavor = "tap-preferred";
+};
+&caps_word {
+    continue-list = <SE_MINS SE_UNDS SE_AMPR SE_AE SE_OE SE_AA>;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_caps {
+            timeout-ms = <50>;
+            key-positions = <16 19>;
+            bindings = <&caps_word>;
+        };
+    };
+};
+
+/ {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "homerow mods";
+            #binding-cells = <2>;
+            tapping_term_ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+};
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | esc |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | lock |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
+//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+                        bindings = <
+   &kp TAB  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I    &kp O   &kp P    &kp SE_AA
+   &kp ESC &hm LGUI A &hm LALT S &hm LCTL D &hm LSFT F &kp G   &kp H &hm LSFT J  &hm LCTL K  &hm LALT L &hm LGUI SE_OE &kp SE_AE
+   &kp K_LOCK &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp CMMA &kp DOT &kp SE_QUES &kp DEL
+                   &kp LGUI &kp BKSP &lt LOWER SPC   &lt RAISE RET &mo DEL &mo ADJ
+                        >;
+                };
+                lower_layer {
+// -----------------------------------------------------------------------------------------
+// |      |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL  |
+// |      |     |     |     |     |     |   | LFT | DWN |  UP | RGT |     |      |
+// |      | BT1 | BT2 | BT3 | BT4 | BT5 |   | HME |     |     | END |     |      |
+//                    |     |     | BTC |   |     |     |     |
+                        bindings = <
+   &trans &kp EXCL  &kp SE_LBRC &kp SE_RBRC &kp SE_DQUO &kp PRCNT      &kp SE_AMPR &kp SE_PLUS &kp SE_LT &kp SE_GT &kp SE_ASTR &kp SE_PIPE
+   &kp LALT &kp SE_SLSH &kp SE_LPRN &kp SE_RPRN &kp SE_QUOT &kp SE_GRV         &kp SE_AT  &kp SE_MINS &kp SE_LCBR  &kp SE_RCBR &kp SE_CIRC &kp SE_ACUT
+   &kp LCTL &kp SE_BLSH &kp SE_ASTR &kp SE_DLR &kp SE_SCLN &kp SE_HASH      &kp SE_TILD &kp SE_UNDS &kp SE_SCLN &kp SE_CLN &kp SE_EQL &kp SE_TILD
+                                      &trans &trans &trans           &trans &trans &trans
+                        >;
+                };
+
+                raise_layer {
+// -----------------------------------------------------------------------------------------
+// |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  {  |  }  | "|" |  `   |
+// | SHFT |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |  ~   | // TODO: Fix this row when &mkp is committed
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        bindings = <
+   &kp F7 &kp F8 &kp F9  &kp F10 &kp F11 &kp F12           &kp SE_ASTR &kp N7 &kp N8 &kp N9 &kp N0 &trans
+   &kp F1 &kp F2 &kp F3  &kp F4  &kp F5  &kp F6            &kp SE_PLUS &kp N4 &kp N5 &kp N6 &trans &trans
+   &trans &kp SE_MICR &kp SE_PND &kp SE_EUR &kp SE_DIAE    &kp SE_MINS &kp N1 &kp N2 &kp N3 &trans &trans
+                                   &trans &trans &trans    &trans &trans &kp N0 >;
+                };
+
+                adj_layer {
+// -----------------------------------------------------------------------------------------
+// |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  {  |  }  | "|" |  `   |
+// | SHFT |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |  ~   | // TODO: Fix this row when &mkp is committed
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        bindings = <
+   &bt BT_CLR &bt BT_PRV &bt BT_NXT  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2      &trans &trans &trans &trans &out OUT_TOG &ext_power EP_OFF
+   &trans     &trans     &trans      &trans       &trans       &trans            &trans &trans &trans &trans &out OUT_BLE &ext_power EP_ON
+   &trans     &trans     &trans      &trans       &trans       &trans            &trans &trans &trans &trans &out OUT_USB &ext_power EP_TOG
+                                     &trans       &trans       &trans            &trans &trans &trans >;
+                };
+        };
+};
