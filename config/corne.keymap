@@ -123,10 +123,10 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |  ~   | // TODO: Fix this row when &mkp is committed
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &bt BT_CLR &bt BT_PRV &bt BT_NXT  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2      &trans &trans &trans &trans &out OUT_TOG &ext_power EP_OFF
-   &trans     &trans     &trans      &trans       &trans       &trans            &trans &trans &trans &trans &out OUT_BLE &ext_power EP_ON
-   &trans     &trans     &trans      &trans       &trans       &trans            &trans &trans &trans &trans &out OUT_USB &ext_power EP_TOG
-                                     &trans       &trans       &trans            &trans &trans &trans >;
+   &bt BT_CLR    &bt BT_PRV &bt BT_NXT  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2      &trans &trans &trans &trans &out OUT_TOG &ext_power EP_OFF
+   &trans        &trans     &trans      &trans       &trans       &trans            &trans &trans &trans &trans &out OUT_BLE &ext_power EP_ON
+   &bt BT_SEL 4  &trans     &trans      &trans       &trans       &trans            &trans &trans &trans &trans &out OUT_USB &ext_power EP_TOG
+                                        &trans       &trans       &trans            &trans &trans &trans >;
                 };
         };
 };
