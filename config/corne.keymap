@@ -11,6 +11,9 @@
 #define NAV     3
 #define ADJ     4
 
+#define FAST_COMBO_TIMEOUT 30
+#define SLOW_COMBO_TIMEOUT 40
+
 
 &lt {
     tapping_term_ms = <200>;
@@ -28,9 +31,19 @@
     combos {
         compatible = "zmk,combos";
         combo_caps {
-            timeout-ms = <50>;
+            timeout-ms = <SLOW_COMBO_TIMEOUT>;
             key-positions = <16 19>;
             bindings = <&caps_word>;
+        };
+        combo_esc {
+            timeout-ms = <FAST_COMBO_TIMEOUT>;
+            key-positions = <19 20>;
+            bindings = <&kp ESC>
+        };
+        combo_tab {
+            timeout-ms = <FAST_COMBO_TIMEOUT>;
+            key-positions = <15 16>;
+            bindings = <&kp ESC>
         };
     };
 };
